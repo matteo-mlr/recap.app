@@ -11,7 +11,9 @@ import {LoginComponent} from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider } from 'angularx-social-login';
-import {HttpClientModule} from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
+
+import { LoginGuardService } from './services/login-guard.service';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent],
@@ -28,10 +30,11 @@ import {HttpClientModule} from "@angular/common/http";
             provider: new GoogleLoginProvider(
               '1015993652059-3lgc5enu67hrbj6cgu19dcaev6dd4dlq.apps.googleusercontent.com'
             )
-          }
+            }
         ]
       } as SocialAuthServiceConfig,
-    }
+    },
+    LoginGuardService
   ],
   bootstrap: [AppComponent],
 })

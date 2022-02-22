@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FooterComponent } from './footer.page';
-import {LoginComponent} from '../login/login.component';
+import { LoginComponent } from '../login/login.component';
+
+import { LoginGuard } from '../guards/login.guard';
 
 const routes: Routes = [
   {
@@ -10,20 +12,24 @@ const routes: Routes = [
     children: [
       {
         path: 'social',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule),
+        canActivate: [LoginGuard]
       },
       {
         path: 'camera',
-        loadChildren: () => import('../camera-tab/camera-tab.module').then(m => m.CameraTabModule)
+        loadChildren: () => import('../camera-tab/camera-tab.module').then(m => m.CameraTabModule),
+        canActivate: [LoginGuard]
       },
       {
         path: 'feed',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule),
+        canActivate: [LoginGuard]
       },
       {
         path: '',
         redirectTo: '/tabs/social',
-        pathMatch: 'full'
+        pathMatch: 'full',
+        canActivate: [LoginGuard]
       }
     ]
   },

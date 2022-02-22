@@ -14,7 +14,11 @@ export class GooglePhotoService {
   constructor(
     private http: HttpClient,
     private cookieService: CookieService
-    ) { }
+    ) {
+      if (!!localStorage.getItem('authToken')) {
+        this.accessToken = localStorage.getItem('authToken');
+      }
+    }
 
   getAlbums(){
     return this.http.get('https://photoslibrary.googleapis.com/v1/albums', {
@@ -53,7 +57,7 @@ export class GooglePhotoService {
 
   getUploadToken(imageBase64: string) {
 
-    let binaryImage = Buffer.from(imageBase64, 'base64');
+    let binaryImage = Buffer.from(imageBase64, 'binary');
 
     const uploadHeaders = new HttpHeaders({
         'Authorization': `Bearer ${this.accessToken}`,
@@ -112,15 +116,15 @@ export class GooglePhotoService {
       headers: createMediaItemHeaders
     }
 
-    const albumId = this.createAlbum();
+    //const albumId = this.createAlbum();
+
+    console.log(uploadToken);
     
     const body = {
-      "albumId": albumId, 
       "newMediaItems": [
         {
           "description": "Testupload",
           "simpleMediaItem": {
-            "fileName": 'Test',
             "uploadToken": uploadToken
           }
         }
