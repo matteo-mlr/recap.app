@@ -1,0 +1,46 @@
+<ion-content [fullscreen]="true">
+
+  <div class="container">
+
+    <div class="header">
+
+      <div routerLink="../.." class="back-button icon">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </div>
+
+      <div class="header-info">
+        <div class="header-title">{{group.name}}</div>
+        <div class="header-details">10.09.21 - 13.09.21</div>
+      </div>
+
+      <div class="camera-button icon">
+        <ion-icon name="camera-outline" routerLink='/tabs/camera'></ion-icon>
+      </div>
+    </div>
+
+
+    <div class="list">
+
+      <div *ngFor="let post of group.posts"  class="post">
+<!--        <div class="post-img" style="background-image: url('/assets/{{post.img}}');"></div>-->
+
+        <img src="{{post.img}}">
+
+        <div class="post-details">
+
+          <div class="post-info">
+            <div class="post-author">Posted by {{post.author}} </div>
+            <div class="post-date">{{post.date}} Uhr</div>
+          </div>
+
+          <div class="button-container">
+            {{post.likes}}<ion-icon class="like-button" name="heart"></ion-icon>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</ion-content>

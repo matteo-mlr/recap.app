@@ -1,0 +1,96 @@
+.container {
+    padding: 0px 20px;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100%;
+    background-color: #191919;
+}
+
+.test {
+    width: 100%;
+    color: white;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    padding: 40px 0px 20px 0px;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.back-button {
+    margin-right: 10px;
+}
+
+.header-info {
+    width: 100%;
+}
+
+.header-title {
+    margin-bottom: 5px;
+}
+
+.header-details {
+    font-size: 14px;
+    color: #707070;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.post {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.post-img{
+    background-color: rgb(34, 34, 34);
+    width: 100%;
+    padding-top: 100%;
+    background-size: cover;
+    height: 0px;
+    border-radius: 10px;
+}
+
+.post-details {
+    display: flex;
+    margin-top: 10px;
+}
+
+.post-info {
+
+    width: 100%;
+    color: white;
+}
+
+.post-author {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.post-date {
+    font-size: 10px;
+    font-weight: bold;
+    color: #707070;
+}
+
+.button-container {
+    display: flex;
+    color: #C95064;
+}
+
+.like-button {
+    font-size: 22px;
+    margin-left: 5px;
+}

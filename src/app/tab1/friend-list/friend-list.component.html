@@ -1,0 +1,19 @@
+<div class="list">
+
+  <div *ngFor="let friend of friends" class="list-item">
+
+    <div class="profile-picture" style="background-image: url('/assets/{{friend.img}}');"></div>
+
+    <div class="friend-info">
+      <div class="friend-name">{{friend.name}}</div>
+      <div class="friend-detail">{{friend.imgCount}} Fotos</div>
+    </div>
+
+    <div class="list-buttons">
+      <ion-icon class="list-button" name="camera-outline" routerLink='/tabs/camera'></ion-icon>
+      <ion-icon class="list-button" name="ellipsis-horizontal"></ion-icon>
+    </div>
+
+  </div>
+
+</div>

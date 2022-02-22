@@ -1,0 +1,7 @@
+{
+  "name": "SharedGallery",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

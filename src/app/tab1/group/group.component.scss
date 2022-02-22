@@ -1,0 +1,38 @@
+
+.list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+.list-item{
+    background-color: rgb(34, 34, 34);
+    width: 47.5%;
+    //padding-top: 47.5%;
+    background-size: cover;
+    //height: 0px;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+
+.flex-row {
+    //display: flex;
+    //flex-direction: row;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.group-info {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    //bottom: 30px;
+    //padding: 0px 10px;
+
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+}

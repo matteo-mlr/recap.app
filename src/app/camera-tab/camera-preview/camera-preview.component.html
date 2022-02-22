@@ -1,0 +1,34 @@
+<ion-content>
+  <div class="camera-preview-component">
+    <div class="top-camera-preview-control-panel">
+      <div class="top-camera-preview-control-panel-part">
+        <img src="../../assets/icons/back_arrow_white.svg" routerLink='..' routerDirection='back'>
+      </div>
+      <div class="top-camera-preview-control-panel-part">
+        <p>Post</p>
+      </div>
+      <div class="top-camera-preview-control-panel-part"></div>
+    </div>
+    <div class="picture-preview-component">
+      <swiper #swiper class="picture-slider" (slideChange)="slideChanged($event)">
+        <ng-template swiperSlide class="picture-item" *ngFor="let image of images">
+          <div class="picture" style="background-image: url({{image}})"></div>
+        </ng-template>
+      </swiper>
+      <div class="index-wrapper">
+        <div class="index-element" *ngFor="let image of images; let i = index" class="{{i === currentIndex ? 'active' : ''}}"></div>
+      </div>
+    </div>
+    <div class="button-wrapper">
+      <div class="add-button button-wrapper-part">
+        <img src="../../../assets/icons/add_white.svg" routerLink='../'>
+      </div>
+      <div class="next-button-wrapper button-wrapper-part">
+        <div class="next-button" (click)='goToSendPage()'>
+          <img src="../../../assets/icons/back_arrow_grey.svg">
+        </div>
+      </div>
+      <div class="button-wrapper-part"></div>
+    </div>
+  </div>
+</ion-content>

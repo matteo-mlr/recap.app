@@ -1,0 +1,30 @@
+<ion-content [fullscreen]="true">
+
+  <div class="container">
+    <div class="header">
+      <div class="camera-button icon">
+        <ion-icon name="camera-outline" routerLink='/tabs/camera'></ion-icon>
+      </div>
+      <div class="title" >Social</div>
+      <div class="contact-button icon">
+        <ion-icon name="person-add-outline"></ion-icon>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <div (click)="tabAction(0)" class="friends tab {{activeButton === 0 ? 'active' : ''}}">Groups</div>
+      <div (click)="tabAction(1)" class="groups tab {{activeButton === 1 ? 'active' : ''}}">Friends</div>
+    </div>
+
+    <app-group *ngIf="activeButton === 0"></app-group>
+    <app-friend-list *ngIf="activeButton === 1"></app-friend-list>
+
+    <div class="footer">
+    </div>
+
+  </div>
+
+<!-- <ion-router-outlet></ion-router-outlet> -->
+<!-- <router-outlet></router-outlet> -->
+
+</ion-content>

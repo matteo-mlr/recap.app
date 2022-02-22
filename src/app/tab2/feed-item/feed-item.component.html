@@ -1,0 +1,16 @@
+<div class="feed-item-container">
+  <ion-slides class="picture-slider" (ionSlideDidChange)="slideChanged()">
+    <ion-slide class="picture-wrapper" *ngFor='let post of posts'>
+      <div class="picture" style="background-image: url(/assets/{{post.img}}/)"></div>
+    </ion-slide>
+  </ion-slides>
+  <div class="item-footer">
+    <div class="item-description">
+      <p>{{group.name}}</p>
+      <p>{{date}}</p>
+    </div>
+    <div class="index-wrapper">
+      <div class="index-element" *ngFor="let post of posts; let i = index" class="{{i === currentIndex ? 'active' : ''}}"></div>
+    </div>
+  </div>
+</div>

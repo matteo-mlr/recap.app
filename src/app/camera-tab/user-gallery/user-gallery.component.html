@@ -1,0 +1,11 @@
+<div class="user-gallery-component">
+  <div class="gallery-wrapper">
+    <!-- <app-user-gallery-image *ngFor="let image of images" image={{image}}></app-user-gallery-image> -->
+    <div class="gallery-image" class="{{images[i].selected === true ? 'selected' : ''}}" *ngFor="let image of images; let i = index" style="background-image: url({{image.imagePath}})" (click)='changeSelectedState(i)'>
+      <div class="select-icon" class="{{images[i].selected === true ? 'selected' : ''}}"></div>
+    </div>
+  </div>
+  <div class="next-button" class="{{getImageSelected() === true ? 'selected' : ''}}" (click)='routeToPreview()'>
+    <img src="../../../assets/icons/back_arrow_grey.svg">
+  </div>
+</div>

@@ -1,0 +1,64 @@
+.container {
+    padding: 0px 20px;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100%;
+    background-color: #191919;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    padding: 40px 0px 20px 0px;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    width: 100%;
+    font-size: 22px;
+    font-weight: bold;
+    color: #707070;
+    margin-bottom: 30px;
+}
+
+.tab {
+    width: 100%;
+    text-align: center;
+}
+
+.active{
+    color:white
+}
+
+
+
+// app-group {
+//     width: 100%;
+//     padding-top: 50%;
+//     margin-right: 20px; 
+// }
+
+// .group-component{
+//     background-color: rgb(34, 34, 34);
+//     width: 100%;
+//     padding-top: 50%;
+//     margin-right: 20px; 
+//     background-size: cover;
+
+//     border-radius: 20px;
+// }
+
+// app-group:last-child{
+//      margin-right: 0px;
+// }

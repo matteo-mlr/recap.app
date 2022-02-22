@@ -1,0 +1,27 @@
+<ion-content
+  class="camera-component-wrapper"
+  [scrollEvents]="true"
+  overflow-scroll="true">
+  <div class="camera-component">
+    <webcam [height]="2000" [width]="1100" (imageCapture)="takePhoto($event)" 
+            [trigger]="triggerObservable" [imageQuality]="1" (cameraSwitched)="cameraWasSwitched($event)" 
+            [switchCamera]="nextWebcamObservable" [captureImageData]=true
+            (initError)="handleInitError($event)" [imageType]="'image/jpeg'"></webcam>
+    <div class="top-camera-control-panel">
+      <div class="platzhalter"></div>
+      <img src="../../assets/icons/flash_white.svg">
+    </div>
+    <div class="bottom-camera-control-panel">
+      <div class="gallery-icon-wrapper bottom-camera-control-panel-part">
+        <img src="../../assets/icons/gallery_white.svg">
+      </div>
+      <div class="bottom-camera-control-panel-part">
+        <div class="shutter-button" (click)="triggerPhoto()"></div>
+      </div>
+      <div class="bottom-camera-control-panel-part">
+        <img src="../../assets/icons/swap_cameras_white.svg" (click)="showNextWebcam(true);">
+      </div>
+    </div>
+  </div>
+  <app-user-gallery></app-user-gallery>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-content>
+  <div class="camera-send-wrapper">
+    <div class="top-camera-preview-control-panel">
+      <div class="top-camera-preview-control-panel-part">
+        <img src="../../assets/icons/back_arrow_white.svg" routerLink='..'>
+      </div>
+      <div class="top-camera-preview-control-panel-part">
+        <p>Post</p>
+      </div>
+      <div class="top-camera-preview-control-panel-part"></div>
+    </div>
+
+    <!-- <app-group *ngIf="activeButton === 0"></app-group> -->
+    <!--<app-friend-list *ngIf="activeButton === 1"></app-friend-list> -->
+
+    <div class="tabs">
+      <div (click)="tabAction(0)" class="friends tab {{activeButton === 0 ? 'active' : ''}}">Groups</div>
+      <div (click)="tabAction(1)" class="groups tab {{activeButton === 1 ? 'active' : ''}}">Friends</div>
+    </div>
+  </div>
+</ion-content>

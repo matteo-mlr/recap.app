@@ -1,0 +1,59 @@
+.camera-send-wrapper {
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100%;
+  width: 100%;
+  background-color: #191919;
+}
+
+.top-camera-preview-control-panel {
+  width: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  z-index: 1;
+}
+
+.top-camera-preview-control-panel-part {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-camera-preview-control-panel-part:nth-child(1) {
+  justify-content: flex-start;
+}
+
+.top-camera-preview-control-panel-part:nth-child(2) p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.25px;
+  color: #fff;
+}
+
+.top-camera-preview-control-panel img {
+  width: 12px;
+}
+
+.tabs {
+  display: flex;
+  width: 100%;
+  font-size: 22px;
+  font-weight: bold;
+  color: #707070;
+  margin-bottom: 30px;
+}
+
+.tab {
+  width: 100%;
+  text-align: center;
+}
+
+.active{
+  color:white
+}

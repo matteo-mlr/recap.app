@@ -1,0 +1,27 @@
+
+<div class="list">
+  <!--            style="background-image: {{group.path}};"-->
+        <div *ngFor="let group of groups"
+
+            class="list-item"
+            [routerLink]="['group-detail', group.id]"
+             >
+            <img src="{{group.path}}">
+            <div class="group-info">
+                <div class="group-name">{{group.name}}</div>
+                <div class="group-members">{{group.members}} <ion-icon name="person"></ion-icon></div>
+            </div>
+        </div>
+
+<!--        <div *ngFor="let group of groups"-->
+<!--             style="background-image: url('/assets/{{group.path}}/');"-->
+<!--             class="list-item"-->
+<!--             (click)= 'testApi()'-->
+<!--        >-->
+<!--          <div class="group-info">-->
+<!--            <div class="group-name">{{group.name}}</div>-->
+<!--            <div class="group-members">{{group.members}} <ion-icon name="person"></ion-icon></div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+</div>
