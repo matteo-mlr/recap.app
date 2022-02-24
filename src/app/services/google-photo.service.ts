@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { CookieService } from 'ngx-cookie-service';
 import { Buffer } from 'buffer';
 
 @Injectable({
@@ -12,8 +11,7 @@ export class GooglePhotoService {
   private uploadToken;
 
   constructor(
-    private http: HttpClient,
-    private cookieService: CookieService
+    private http: HttpClient
     ) {
       if (!!localStorage.getItem('authToken')) {
         this.accessToken = localStorage.getItem('authToken');
@@ -46,18 +44,15 @@ export class GooglePhotoService {
 
   setAuthToken(authToken: string) {
     this.accessToken = authToken;
-    this.cookieService.set('authToken', this.accessToken);
-  }
-
-  getAuthToken(): string | void {
-    if (this.cookieService.check('authToken')) {
-      return this.cookieService.get('authToken');
-    }
   }
 
   getUploadToken(imageBase64: string) {
 
     let binaryImage = Buffer.from(imageBase64, 'binary');
+
+    const toBinString = (bytes) => bytes.reduce((str, byte) => str + byte.toString(2).padStart(8, '0'), '');
+    const binary = toBinString(binaryImage);
+    console.log(binary);
 
     const uploadHeaders = new HttpHeaders({
         'Authorization': `Bearer ${this.accessToken}`,
@@ -72,9 +67,10 @@ export class GooglePhotoService {
       responseType: 'text'
     }
 
-    this.http.post('https://photoslibrary.googleapis.com/v1/uploads', binaryImage, httpUploadHeaders)
+    this.http.post('https://photoslibrary.googleapis.com/v1/uploads', imageBase64, httpUploadHeaders)
     .subscribe(data => {
       this.uploadToken = data;
+      console.log(data);
       this.createMediaItem(this.uploadToken);
     });
 
@@ -117,8 +113,6 @@ export class GooglePhotoService {
     }
 
     //const albumId = this.createAlbum();
-
-    console.log(uploadToken);
     
     const body = {
       "newMediaItems": [

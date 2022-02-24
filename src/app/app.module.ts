@@ -15,10 +15,30 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { LoginGuardService } from './services/login-guard.service';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../environments/environment';
+import { FirebaseAuthService } from './services/firebase-auth.service';
+
 @NgModule({
   declarations: [AppComponent, LoginComponent],
   entryComponents: [],
-  imports: [BrowserModule, ReactiveFormsModule, HttpClientModule,SocialLoginModule, IonicModule.forRoot(), AppRoutingModule, ],
+  imports: [
+    BrowserModule, 
+    ReactiveFormsModule, 
+    HttpClientModule, 
+    SocialLoginModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule
+  ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     {
       provide: 'SocialAuthServiceConfig',
@@ -34,7 +54,8 @@ import { LoginGuardService } from './services/login-guard.service';
         ]
       } as SocialAuthServiceConfig,
     },
-    LoginGuardService
+    LoginGuardService,
+    FirebaseAuthService
   ],
   bootstrap: [AppComponent],
 })

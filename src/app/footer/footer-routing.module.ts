@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FooterComponent } from './footer.page';
 import { LoginComponent } from '../login/login.component';
+import { FirebaseLoginComponent } from '../firebaseLogin/firebase-login.component';
 
 import { LoginGuard } from '../guards/login.guard';
 
@@ -35,7 +36,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent,
+    component: FirebaseLoginComponent,
     pathMatch: 'full'
   },
   {

@@ -28,8 +28,6 @@ export class GroupService {
               members: 1
             }
           );
-          
-          console.log(data['albums'][i]['id']);
           this.getPhotosOfAlbum(this.groups[i])
         }
       });

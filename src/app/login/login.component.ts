@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SocialAuthService, GoogleLoginProvider, SocialUser } from 'angularx-social-login';
 import { Router } from '@angular/router';
 import { GooglePhotoService } from '../services/google-photo.service';
-import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -25,8 +24,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private socialAuthService: SocialAuthService,
     private router: Router,
-    private googlePhotoService: GooglePhotoService,
-    private cookieService: CookieService
+    private googlePhotoService: GooglePhotoService
   ) { }
 
   ngOnInit() {
